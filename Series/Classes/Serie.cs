@@ -13,6 +13,8 @@ namespace Series.Classes
 
         private int Year { get; set; }
 
+        private bool Deleted { get; set; }
+
         public Serie(int id, Genre genre, string title, string description, int year)
         {
             this.Id = id;
@@ -20,6 +22,7 @@ namespace Series.Classes
             this.Title = title;
             this.Description = description;
             this.Year = year;
+            this.Deleted = false;
         }
 
         public override string ToString()
@@ -37,9 +40,17 @@ namespace Series.Classes
             return this.Title;
         }
 
-        internal int ReturnId()
+        public int ReturnId()
         {
             return this.Id;
+        }
+
+        public void Delete() { 
+            this.Deleted = true;
+        }
+
+        public bool ReturnDeleted() { 
+            return this.Deleted;
         }
     }
 }

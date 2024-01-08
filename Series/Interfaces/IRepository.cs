@@ -9,7 +9,7 @@
 
         void Add(T entity);
 
-        void Delete(T id); 
+        void Delete(int id); 
         
         void Update(int id, T entity);
 
